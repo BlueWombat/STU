@@ -1,0 +1,14 @@
+﻿<sitecore>
+  <phrase path="/sitecore/content/Item1" key="Item" itemid="{D233184B-1E12-4535-92EA-BDA79785F58C}" fieldid="Field 1" updated="20170220T144603">
+    <da>Lorem ipsum dolor sit amet</da>
+  </phrase>
+  <phrase path="/sitecore/content/Item1" key="Item" itemid="{D233184B-1E12-4535-92EA-BDA79785F58C}" fieldid="Field 2" updated="20170220T144603">
+    <da>Lorem ipsum dolor sit amet</da>
+  </phrase>
+  <phrase path="/sitecore/content/Item2" key="Item" itemid="{499DFDAB-DF59-4749-B51B-AD8895E9E246}" fieldid="Field 1" updated="20170220T144603">
+    <da>Lorem ipsum dolor sit amet</da>
+  </phrase>
+  <phrase path="/sitecore/content/Item2" key="Item" itemid="{499DFDAB-DF59-4749-B51B-AD8895E9E246}" fieldid="Field 2" updated="20170220T144603">
+    <da>Lorem ipsum dolor sit amet</da>
+  </phrase>
+</sitecore>
