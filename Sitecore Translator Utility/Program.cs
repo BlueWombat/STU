@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BlueWombat.Sitecore_Translator_Ultility
+namespace BlueWombat.Sitecore_Translator_Utility
 {
     static class Program
     {

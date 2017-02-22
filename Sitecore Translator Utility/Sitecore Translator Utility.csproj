@@ -7,8 +7,8 @@
     <ProjectGuid>{47F6BBAF-095B-4E01-B9A5-5BFB164B7A6D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlueWombat.Sitecore_Translator_Ultility</RootNamespace>
-    <AssemblyName>Sitecore Translator Ultility</AssemblyName>
+    <RootNamespace>BlueWombat.Sitecore_Translator_Utility</RootNamespace>
+    <AssemblyName>Sitecore Translator Utility</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

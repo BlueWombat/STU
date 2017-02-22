@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BlueWombat.BusinessLogic.Xml;
 
-namespace BlueWombat.Sitecore_Translator_Ultility
+namespace BlueWombat.Sitecore_Translator_Utility
 {
     public partial class MainWindow : Form
     {

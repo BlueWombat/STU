@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace BlueWombat.Sitecore_Translator_Ultility
+namespace BlueWombat.Sitecore_Translator_Utility
 {
     partial class AboutDialog : Form
     {

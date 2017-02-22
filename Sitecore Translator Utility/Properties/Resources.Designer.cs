@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BlueWombat.Sitecore_Translator_Ultility.Properties {
+namespace BlueWombat.Sitecore_Translator_Utility.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace BlueWombat.Sitecore_Translator_Ultility.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BlueWombat.Sitecore_Translator_Ultility.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BlueWombat.Sitecore_Translator_Utility.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

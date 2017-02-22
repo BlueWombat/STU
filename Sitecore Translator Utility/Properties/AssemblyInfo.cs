@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sitecore Translator Ultility")]
+[assembly: AssemblyTitle("Sitecore Translator Utility")]
 [assembly: AssemblyDescription("A simple tool for translating the contents of a Sitecore language export file to other languages.\r\n\r\nIcon kindly provided by Arthur Zaynullin (https://www.iconfinder.com/Ampeross).")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BlueWombat (http://bluewombat.com)")]
-[assembly: AssemblyProduct("Sitecore Translator Ultility")]
+[assembly: AssemblyProduct("Sitecore Translator Utility")]
 [assembly: AssemblyCopyright("Copyright © BlueWombat 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

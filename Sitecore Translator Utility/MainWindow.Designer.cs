@@ -1,4 +1,4 @@
-﻿namespace BlueWombat.Sitecore_Translator_Ultility
+﻿namespace BlueWombat.Sitecore_Translator_Utility
 {
     partial class MainWindow
     {

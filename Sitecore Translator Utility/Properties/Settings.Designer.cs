@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BlueWombat.Sitecore_Translator_Ultility.Properties {
+namespace BlueWombat.Sitecore_Translator_Utility.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
