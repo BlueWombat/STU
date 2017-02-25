@@ -31,10 +31,9 @@ namespace BlueWombat.Sitecore_Translator_Utility
 
             openOriginalFileButton.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             saveTranslatedFileButton.Anchor = AnchorStyles.Right | AnchorStyles.Top;
-
-            var cultureReg = new Regex(@"\s*\(.+\)$");
-            var cultures1 = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(c => new KeyValuePair<string, string>(cultureReg.Replace(c.EnglishName, ""), c.TwoLetterISOLanguageName.ToLowerInvariant())).OrderBy(c => c.Key).Distinct().ToList();
-            var cultures2 = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(c => new KeyValuePair<string, string>(cultureReg.Replace(c.EnglishName, ""), c.TwoLetterISOLanguageName.ToLowerInvariant())).OrderBy(c => c.Key).Distinct().ToList();
+            
+            var cultures1 = XmlParser.GetLanguages().Select(c => new KeyValuePair<string, string>(c.Key, c.Value)).ToList();
+            var cultures2 = XmlParser.GetLanguages().Select(c => new KeyValuePair<string, string>(c.Key, c.Value)).ToList();
             originalLanguageSelector.DataSource = cultures1;
             originalLanguageSelector.DisplayMember = "Key";
             translatedLanguageSelector.DataSource = cultures2;

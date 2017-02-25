@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace BlueWombat.BusinessLogic.Xml
@@ -27,6 +29,21 @@ namespace BlueWombat.BusinessLogic.Xml
             {
                 serializer.Serialize(file, entity);
             }
+        }
+
+        public static Dictionary<string, string> GetLanguages()
+        {
+            var langs =
+                typeof(PhraseEntity).GetProperties()
+                    .Where(p => p.CustomAttributes.Any(a => a.AttributeType == typeof(LanguageAttribute)))
+                    .Select(p => new
+                    {
+                        Name = p.CustomAttributes.SingleOrDefault(a => a.AttributeType == typeof(LanguageAttribute)).
+                            NamedArguments.SingleOrDefault(an => an.MemberName == "Name").TypedValue.Value.ToString(),
+                        PropertyName = p.Name
+                    }).ToDictionary(l => l.Name, l => l.PropertyName);
+
+            return langs;
         }
     }
 }
