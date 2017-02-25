@@ -76,5 +76,33 @@ namespace UnitTests
                 Console.WriteLine(documentPhrase.ToString());
             }
         }
+
+        [Test]
+        public void can_we_get_all_attributes_for_each_phraseentity_property()
+        {
+            var props = typeof(PhraseEntity).GetProperties();
+            foreach (var propertyInfo in props)
+            {
+                Console.WriteLine($"{propertyInfo.Name}:");
+                foreach (var propertyInfoCustomAttribute in propertyInfo.CustomAttributes)
+                {
+                    Console.WriteLine($"\t{propertyInfoCustomAttribute.AttributeType}");
+                    foreach (var customAttributeNamedArgument in propertyInfoCustomAttribute.NamedArguments)
+                    {
+                        Console.WriteLine($"\t\t{customAttributeNamedArgument.MemberName}: {customAttributeNamedArgument.TypedValue.Value}");
+                    }
+                }
+            }
+        }
+
+        [Test]
+        public void can_we_get_all_registered_languages()
+        {
+            var langs = XmlParser.GetLanguages();
+            foreach (var lang in langs)
+            {
+                Console.WriteLine($"{lang.Key}: {lang.Value}");
+            }
+        }
     }
 }
