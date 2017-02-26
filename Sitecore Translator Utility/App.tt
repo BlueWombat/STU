@@ -1,0 +1,45 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(SolutionDir)Tools\bin\Debug\BlueWombat.STU.Tools.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="BlueWombat.Tools" #>
+<#@ output extension=".config" #>
+<#
+var cultures = CultureManager.GetCultures();
+var padWidth = 0;
+cultures.ForEach(c =>
+{
+    if (c.Item2.Length > padWidth)
+        padWidth = c.Item2.Length;
+});
+#>
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="STU" type="BlueWombat.BusinessLogic.Config.STUConfig, BlueWombat.STU.BusinessLogic"/>
+  </configSections>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+  </startup>
+  <STU>
+    <!-- This optional filter can be used to limit the language dropdown for either Original Language, Target Language or both -->
+    <!--<OriginalLanguages>
+<#
+foreach (var culture in cultures)
+{#>
+      <Language><#=culture.Item2#></Language><#="//".PadLeft(padWidth - culture.Item2.Length + 5) + culture.Item1#>
+<#
+}#>
+    </OriginalLanguages>
+    <TargetLanguages>
+<#
+foreach (var culture in cultures)
+{#>
+      <Language><#=culture.Item2#></Language><#="//".PadLeft(padWidth - culture.Item2.Length + 5) + culture.Item1#>
+<#
+}#>
+    </TargetLanguages>-->
+  </STU>
+</configuration>

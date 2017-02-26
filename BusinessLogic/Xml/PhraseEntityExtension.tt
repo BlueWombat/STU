@@ -1,10 +1,12 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
 <#@ assembly name="System.Core" #>
+<#@ assembly name="$(SolutionDir)Tools\bin\Debug\BlueWombat.STU.Tools.dll" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Text.RegularExpressions" #>
 <#@ import namespace="System.Globalization" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="BlueWombat.Tools" #>
 <#@ output extension=".cs" #>
 using System.Xml.Serialization;
 
@@ -13,28 +15,12 @@ namespace BlueWombat.BusinessLogic.Xml
     public partial class PhraseEntity
     {
 <#
-var cultureReg = new Regex(@"\s*\(.+\)$");
-var cultures = CultureInfo.GetCultures(CultureTypes.SpecificCultures)
-.Select(c => new
-{
-    Name = c.EnglishName,
-    IsoCode = c.Name
-})
-.Union(CultureInfo.GetCultures(CultureTypes.SpecificCultures)
-    .Select(c => new
-    {
-        Name = cultureReg.Replace(c.EnglishName, ""),
-        IsoCode = c.TwoLetterISOLanguageName.ToLowerInvariant()
-    }))
-.GroupBy(c => c.IsoCode)
-.Distinct()
-.Select(c => c.First())
-.OrderBy(c => c.Name);
+var cultures = CultureManager.GetCultures();
 foreach (var culture in cultures)
 {#>
-		[Language(Name = "<#=culture.Name#>")]
-		[XmlElement(ElementName = "<#=culture.IsoCode#>")]
-		public string @<#=culture.IsoCode.Replace("-", "")#> { get; set; }
+		[Language(Name = "<#=culture.Item1#>")]
+		[XmlElement(ElementName = "<#=culture.Item2#>")]
+		public string @<#=culture.Item2.Replace("-", "")#> { get; set; }
 <#
 }#>
     }
