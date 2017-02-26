@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,8 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\STUConfig.cs" />
+    <Compile Include="Config\LanguageConfigElementCollection.cs" />
+    <Compile Include="Config\LanguageConfigElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xml\Language.cs" />
     <Compile Include="Xml\LanguageAttribute.cs" />
+    <Compile Include="Xml\LanguageManager.cs" />
     <Compile Include="Xml\PhraseEntity.cs" />
     <Compile Include="Xml\PhraseEntityExtension.cs">
       <DependentUpon>PhraseEntityExtension.tt</DependentUpon>

@@ -31,13 +31,13 @@ namespace BlueWombat.Sitecore_Translator_Utility
 
             openOriginalFileButton.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             saveTranslatedFileButton.Anchor = AnchorStyles.Right | AnchorStyles.Top;
-            
-            var cultures1 = XmlParser.GetLanguages().Select(c => new KeyValuePair<string, string>(c.Key, c.Value)).ToList();
-            var cultures2 = XmlParser.GetLanguages().Select(c => new KeyValuePair<string, string>(c.Key, c.Value)).ToList();
+
+            var cultures1 = LanguageManager.GetOriginalLanguages();
+            var cultures2 = LanguageManager.GetTargetLanguages();
             originalLanguageSelector.DataSource = cultures1;
-            originalLanguageSelector.DisplayMember = "Key";
+            originalLanguageSelector.DisplayMember = "Name";
             translatedLanguageSelector.DataSource = cultures2;
-            translatedLanguageSelector.DisplayMember = "Key";
+            translatedLanguageSelector.DisplayMember = "Name";
         }
 
         private void saveTranslatedFileDialog_FileOk(object sender, CancelEventArgs e)
@@ -117,8 +117,8 @@ namespace BlueWombat.Sitecore_Translator_Utility
         private void originalLanguageSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
             var drop = sender as ComboBox;
-            var selectedItem = (KeyValuePair<string, string>)drop.SelectedItem;
-            _originalLanguageCode = selectedItem.Value;
+            var selectedItem = (Language)drop.SelectedItem;
+            _originalLanguageCode = selectedItem.PropertyName;
             if (FieldNames.Items.Count > 0)
                 FieldNames.SetSelected(FieldNames.SelectedIndex < 0 ? 0 : FieldNames.SelectedIndex, true);
         }
@@ -126,8 +126,8 @@ namespace BlueWombat.Sitecore_Translator_Utility
         private void translatedLanguageSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
             var drop = sender as ComboBox;
-            var selectedItem = (KeyValuePair<string, string>)drop.SelectedItem;
-            _translatedLanguageCode = selectedItem.Value;
+            var selectedItem = (Language)drop.SelectedItem;
+            _translatedLanguageCode = selectedItem.PropertyName;
             if (FieldNames.Items.Count > 0)
                 FieldNames.SetSelected(FieldNames.SelectedIndex < 0 ? 0 : FieldNames.SelectedIndex, true);
         }

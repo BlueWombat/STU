@@ -33,7 +33,7 @@ var cultures = CultureInfo.GetCultures(CultureTypes.SpecificCultures)
 foreach (var culture in cultures)
 {#>
 		[Language(Name = "<#=culture.Name#>")]
-		[XmlElement("<#=culture.IsoCode#>")]
+		[XmlElement(ElementName = "<#=culture.IsoCode#>")]
 		public string @<#=culture.IsoCode.Replace("-", "")#> { get; set; }
 <#
 }#>

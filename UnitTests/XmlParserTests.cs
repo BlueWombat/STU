@@ -94,15 +94,5 @@ namespace UnitTests
                 }
             }
         }
-
-        [Test]
-        public void can_we_get_all_registered_languages()
-        {
-            var langs = XmlParser.GetLanguages();
-            foreach (var lang in langs)
-            {
-                Console.WriteLine($"{lang.Key}: {lang.Value}");
-            }
-        }
     }
 }
